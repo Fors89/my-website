@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No BgPro - Удаление фона с изображений</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-image"></i>
+                No BgPro
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Возможности</a></li>
+                    <li><a href="#how-it-works">Как это работает</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+           
+                <div class="background-shapes">
+                    <div class="shape" style="background: linear-gradient(45deg, #6e45e2, #88d3ce);"></div>
+                    <div class="shape" style="background: linear-gradient(45deg, #88d3ce, #6e45e2);"></div>
+                    <div class="shape" style="background: linear-gradient(45deg, #6e45e2, #88d3ce);"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Удаление фона с изображений за секунды</h1>
+                <p>Профессиональное удаление фона с фотографий с помощью искусственного интеллекта. Быстро, точно и без усилий.</p>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+<div class="image-container">
+    <div class="before">
+        <img src="https://i.pinimg.com/736x/5a/21/73/5a217378ec6f7a3c3ea249a2b8f751ab.jpg" alt="До">
+        <span>До</span>
+    </div>
+    <div class="after">
+        <img src="https://i.ibb.co/r2Jq7B5W/image.png" alt="После">
+        <span>После</span>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="upload-box">
+                <div class="upload-icon">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h2>Загрузите изображение для удаления фона</h2>
+                <p>Перетащите сюда файл или нажмите для выбора</p>
+                <input type="file" id="file-upload" accept="image/*">
+                <label for="file-upload" class="btn primary-btn">Выбрать файл</label>
+                <button id="process-button">Обработать</button>
+                <div id="loading" style="display: none;">Обработка...</div>
+            </div>
+            <div class="formats">
+                Поддерживаемые форматы:
+                <span class="format">JPG</span>
+                <span class="format">PNG</span>
+                <span class="format">WEBP</span>
+            </div>
+            <div class="result-container">
+                <div class="result-image before">
+                    <img src="" alt="До">
+                </div>
+                <div class="result-image after">
+                    <img src="" alt="После">
+                </div>
+            </div>
+            <div class="download-container" style="text-align: center; margin-top: 20px;">
+                <button id="download-button" style="display: none;" class="btn download-btn">Скачать</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Наши возможности</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Мгновенная обработка</h3>
+                    <p>Наш ИИ обрабатывает изображения за считанные секунды, экономя ваше время.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Точное выделение</h3>
+                    <p>Точное выделение даже самых сложных объектов, включая волосы и мех.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Конфиденциальность</h3>
+                    <p>Ваши изображения автоматически удаляются с наших серверов через 24 часа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Загрузите изображение</h3>
+                    <p>Перетащите файл или выберите его на вашем устройстве.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Автоматическая обработка</h3>
+                    <p>Наш ИИ мгновенно удалит фон с вашего изображения.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Настройте результат</h3>
+                    <p>При необходимости отредактируйте результат в нашем редакторе.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Скачайте готовое изображение</h3>
+                    <p>Сохраните изображение в нужном формате и качестве.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Отзывы наших клиентов</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Анна Петрова">
+                        <div class="user-info">
+                            <h4>Анна Петрова</h4>
+                            <span>Фотограф</span>
+                        </div>
+                    </div>
+                    <p>"Использую этот сервис для обработки фотографий клиентов. Экономит мне часы работы в Photoshop!"</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Иван Сидоров">
+                        <div class="user-info">
+                            <h4>Иван Сидоров</h4>
+                            <span>Дизайнер</span>
+                        </div>
+                    </div>
+                    <p>"Лучший инструмент для удаления фона, который я пробовал. Особенно хорошо справляется с волосами."</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Елена Ковалева">
+                        <div class="user-info">
+                            <h4>Елена Ковалева</h4>
+                            <span>Маркетолог</span>
+                        </div>
+                    </div>
+                    <p>"Незаменимый инструмент для создания рекламных материалов. Быстро, качественно и бесплатно."</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>No BgPro</h2>
+                <p>Лучший онлайн-инструмент для удаления фона с изображений с помощью искусственного интеллекта.</p>
+                <div class="social-icons">
+                  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О нас</h3>
+                    <p>Лучший онлайн-инструмент для удаления фона с изображений с помощью искусственного интеллекта.</p>
+                </div>
+                <div class="footer-section">
+                    
+                    
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li>Тамбов, ул. Интернациональная, 16</li>
+                        <li>+7 (920) 239 05 29</li>
+                        <li><a href="mailto:support@nobgpro.com">support@nobgpro.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 No BgPro. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

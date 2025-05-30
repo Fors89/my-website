@@ -1,0 +1,948 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #326aa5;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.primary-btn {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.primary-btn:hover {
+    background-color: #218838;
+}
+
+.outline-btn {
+    background-color: transparent;
+    border: 1px solid #2d76c4;
+    color: #337ac5;
+}
+
+.outline-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* Стили для кнопок "Выбрать файл" и "Обработать" */
+.upload-box .primary-btn, #process-button {
+    background-color: #007bff;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.upload-box .primary-btn::before, #process-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(40, 167, 69, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.upload-box .primary-btn:hover, #process-button:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #ff0303, #1100ff);
+}
+
+.upload-box .primary-btn:hover::before, #process-button:hover::before {
+    opacity: 1;
+}
+
+/* Стили для кнопок "Выбрать файл" и "Обработать" */
+.upload-box .btn.primary-btn, .upload-box #process-button {
+    display: inline-block; /* Для <label> и <button> */
+    background-color: #007bff;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none; /* Для <label> */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.upload-box .btn.primary-btn::before, .upload-box #process-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(40, 167, 69, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.upload-box .btn.primary-btn:hover, .upload-box #PROCESS-button:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #ff0303, #1100ff);
+}
+
+.upload-box .btn.primary-btn:hover::before, .upload-box #process-button:hover::before {
+    opacity: 1;
+}
+
+/* Стили для кнопки "Скачать" */
+.download-btn {
+    background-color: #28a745;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.2), rgba(0, 123, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.download-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(40, 167, 69, 0.3);
+    background: linear-gradient(135deg, #28a745, #007bff);
+}
+
+.download-btn:hover::before {
+    opacity: 1;
+}
+
+/* Стили для индикатора загрузки */
+#loading {
+    color: #555;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* Секция героя */
+.hero {
+    background: linear-gradient(135deg, #007bff, #00c4b4);
+    color: #fff;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-image img {
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.1);
+}
+
+/* Секция загрузки */
+.upload-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.upload-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.upload-icon i {
+    font-size: 3rem;
+    color: #1563b8;
+    margin-bottom: 20px;
+}
+
+.upload-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.upload-box p {
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.formats {
+    margin-top: 20px;
+}
+
+.format {
+    background-color: #3d88d3;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.result-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.result-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAIAQMAAAD+wSzIAAAABlBMVEX///+/v7+jQ3Y5AAAADklEQVQI12P4AIX8EAgALgAD/aNpbtEAAAAASUVORK5CYII=') repeat;
+    transition: transform 0.3s ease; /* Плавный переход для эффекта увеличения */
+}
+
+.result-image:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+.result-image img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.result-image.after {
+    background: transparent;
+}
+
+/* Удаляем подписи "До" и "После" */
+.result-image span {
+    display: none;
+}
+
+/* Секция возможностей */
+.features {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 123, 255, 0.1), rgba(40, 167, 69, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #e6f0fa, #e6f7e9);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-icon i {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card:hover .feature-icon i {
+    transform: scale(1.3) rotate(10deg);
+    color: #28a745;
+}
+
+.feature-card h3, .feature-card p {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Секция "Как это работает" */
+.how-it-works {
+    padding: 60px 0;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.step {
+    padding: 20px;
+}
+
+.step-number {
+    background-color: #007bff;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    font-weight: bold;
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.pricing-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.pricing-card.popular {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.pricing-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.features-list li {
+    margin-bottom: 10px;
+}
+
+.features-list i {
+    margin-right: 10px;
+}
+
+/* Секция отзывов */
+.testimonials {
+    padding: 60px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-info h4 {
+    font-size: 1.1rem;
+}
+
+.user-info span {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rating i {
+    color: #ffc107;
+    margin-top: 10px;
+}
+
+/* Секция контактов */
+.contact {
+    padding: 60px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #007bff, #00c4b4);
+    color: #fff;
+}
+
+.contact-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Футер */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-icons a {
+    color: #ccc;
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+/* Стили модальных окон */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-container {
+    background-color: #fff;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-form .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.modal-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.modal-social {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-btn.google {
+    background-color: #db4437;
+    color: #fff;
+}
+
+.social-btn.facebook {
+    background-color: #4267b2;
+    color: #fff;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.modal-footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.modal-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивный дизайн */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .image-container, .result-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .features-grid, .steps, .pricing-cards, .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Контейнер кнопки */
+.login-container {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 220px;
+    height: 60px;
+}
+
+/* Кнопка */
+.login-button {
+    position: relative;
+    background: linear-gradient(45deg, #6e45e2, #88d3ce);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.login-button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.login-button-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Эффект волны */
+.login-button .ripple {
+    position: absolute;
+    background: rgba(228, 9, 9, 0.3);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Плавающие круги */
+.login-container .background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.login-container .shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 15s infinite;
+}
+
+.login-container .shape:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    top: 10%;
+    left: 20%;
+}
+
+.login-container .shape:nth-child(2) {
+    width: 40px;
+    height: 40px;
+    top: 60%;
+    left: 70%;
+}
+
+.login-container .shape:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    top: 40%;
+    left: 10%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+#process-button {
+    margin-left: 10px;
+    background-color: #007bff;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+#process-button:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+    background: linear-gradient(135deg, #ff0303, #1100ff);
+}
+
+#loading {
+    color: #555;
+    font-size: 1.1rem;
+    text-align: center;
+}
+/* Новые стили для горизонтального расположения изображений */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.image-container .before, 
+.image-container .after {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 200px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+.image-container span {
+    font-weight: bold;
+    color: #333;
+}
